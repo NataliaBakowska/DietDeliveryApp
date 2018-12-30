@@ -5,4 +5,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_delivery">Map</string>
+
+    <string name="female">Kobieta</string>
+    <string name="male">Mężczyzna</string>
 </resources>
