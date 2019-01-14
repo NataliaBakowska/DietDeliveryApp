@@ -10,7 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
     protected EditText etAge;
     protected EditText etHeight;
@@ -34,7 +34,6 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         etWeight.setOnClickListener(this);
 
         spinner = findViewById(R.id.spinner);
-        spinner.setOnItemClickListener(this);
 
         cbLoss = findViewById(R.id.cbLoss);
         cbLoss.setOnClickListener(this);
@@ -61,12 +60,31 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    private int calculateDiet(Integer age, Double height, Double weight, String gender, boolean ifWeightLoss ) {
-        return 2000;
+    private Integer calculateDiet(Integer age, Double height, Double weight, String gender, boolean ifWeightLoss ) {
+        int kcal = 0;
+
+        if (gender.equals("Kobieta")) {
+            kcal = (int) ((655 + (9.6 * weight) + (1.8 * height)) - (4.7 * age));
+        } else if (gender.equals("Mężczyzna")) {
+            kcal = (int) ((66 + (13.7 * weight) + (5 * height)) - (6.76 * age));
+        }
+
+        if (ifWeightLoss) {
+            kcal = kcal - 300;
+        }
+
+        if (kcal <= 1400) {
+            kcal = 1200;
+        } else if (kcal <= 1800) {
+            kcal = 1600;
+        } else if (kcal <= 2200 ) {
+            kcal = 2000;
+        } else if (kcal <= 2600) {
+            kcal = 2500;
+        } else if (kcal <= 3000) {
+            kcal = 3000;
+        }
+        return kcal;
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-    }
 }
