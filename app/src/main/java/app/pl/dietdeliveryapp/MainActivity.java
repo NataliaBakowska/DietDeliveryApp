@@ -1,8 +1,15 @@
 package app.pl.dietdeliveryapp;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected Button bDelivery;
     protected Button button3;
     protected Button bContact;
+    protected Button bCall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button3.setOnClickListener(this);
 
         bContact = findViewById(R.id.bContact);
-        bContact.setOnClickListener(this);
+
+        bCall = findViewById(R.id.bCall);
+        bCall.setOnClickListener(this);
     }
 
     @Override
@@ -53,6 +63,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bContact:
                 Intent intent4 = new Intent(this , ContactActivity.class );
                 startActivity(intent4);
+                break;
+
+            case R.id.bCall:
+                onCall();
+                break;
+        }
+    }
+
+    public void onCall() {
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
+
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{Manifest.permission.CALL_PHONE},
+                    123);
+        } else {
+            startActivity(new Intent(Intent.ACTION_CALL).setData(Uri.parse("tel:510002252")));
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+
+            case 123:
+                if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    onCall();
+                } else {
+                    Log.d("TAG", "Call Permission Not Granted");
+                }
+                break;
+
+            default:
                 break;
         }
     }

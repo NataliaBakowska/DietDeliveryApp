@@ -3,11 +3,13 @@ package app.pl.dietdeliveryapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class DietActivity extends AppCompatActivity {
 
     TextView tvKcal;
+    Spinner sKcal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,8 +18,10 @@ public class DietActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         tvKcal = findViewById(R.id.tvKcal);
-        String valueKcal = "Sugerowana kaloryczność to".concat(intent
+        String valueKcal = "Sugerowana kaloryczność to ".concat(intent
                 .getSerializableExtra("kcal").toString());
         tvKcal.setText(valueKcal);
+
+        sKcal = findViewById(R.id.sKcal);
     }
 }

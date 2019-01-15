@@ -61,6 +61,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
     }
 
     private Integer calculateDiet(Integer age, Double height, Double weight, String gender, boolean ifWeightLoss ) {
+        System.out.println(age + " " +height + " " + weight + " " + gender + " " + ifWeightLoss);
         int kcal = 0;
 
         if (gender.equals("Kobieta")) {

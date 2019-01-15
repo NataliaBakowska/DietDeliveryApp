@@ -1,6 +1,7 @@
 package app.pl.dietdeliveryapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ViewUtils;
@@ -35,7 +36,15 @@ public class ContactActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this , DietActivity.class );
-        startActivity(intent);
+        String email = "nbakowska5@gmail.com";
+        String title = etTitle.toString();
+        String message = etMessage.toString();
+
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + email));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, title);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, message);
+       //emailIntent.putExtra(Intent.EXTRA_HTML_TEXT, body); //If you are using HTML in your body text
+
+        startActivity(Intent.createChooser(emailIntent, "Chooser Title"));
     }
 }
