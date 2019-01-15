@@ -17,14 +17,15 @@ public class WebActivity extends AppCompatActivity implements View.OnClickListen
 
         browser = findViewById(R.id.web);
         browser.setWebViewClient(new MyBrowser());
+
+        browser.getSettings().setLoadsImagesAutomatically(true);
+        browser.getSettings().setJavaScriptEnabled(true);
+        browser.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        browser.loadUrl("https://onet.pl");
     }
 
     @Override
     public void onClick(View v) {
-        browser.getSettings().setLoadsImagesAutomatically(true);
-        browser.getSettings().setJavaScriptEnabled(true);
-        browser.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        browser.loadUrl("http://onet.pl");
     }
 
     private class MyBrowser extends WebViewClient {
