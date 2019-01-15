@@ -11,13 +11,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     protected Button bOrder;
     protected Button bDelivery;
-    protected Button button3;
+    protected Button bWeb;
     protected Button bContact;
     protected Button bCall;
 
@@ -32,8 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bDelivery = findViewById(R.id.bDelivery);
         bDelivery.setOnClickListener(this);
 
-        button3 = findViewById(R.id.button3);
-        button3.setOnClickListener(this);
+        bWeb = findViewById(R.id.bWeb);
+        bWeb.setOnClickListener(this);
 
         bContact = findViewById(R.id.bContact);
 
@@ -55,8 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent2);
                 break;
 
-            case R.id.button3:
-                Intent intent3 = new Intent(this , WelcomeActivity.class );
+            case R.id.bWeb:
+                Intent intent3 = new Intent(this , WebActivity.class );
                 startActivity(intent3);
                 break;
 

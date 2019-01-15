@@ -7,7 +7,7 @@
     tools:context=".DietActivity">
 
     <CheckBox
-        android:id="@+id/bLactose"
+        android:id="@+id/cbLactose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -32,10 +32,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:text="Wybierz inną kalorycznosć"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="141dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvKcal" />
 
     <TextView
         android:id="@+id/textView2"
@@ -96,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <CheckBox
-        android:id="@+id/bGluten"
+        android:id="@+id/cbGluten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -105,7 +107,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView4" />
 
     <CheckBox
-        android:id="@+id/bVege"
+        android:id="@+id/cbVege"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -116,12 +118,14 @@
     <EditText
         android:id="@+id/etOthers"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/bSubmitOrder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />

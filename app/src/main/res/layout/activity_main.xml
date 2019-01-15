@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bOrder" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/bWeb"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -73,7 +73,7 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/bWeb" />
 
     <Button
         android:id="@+id/bCall"

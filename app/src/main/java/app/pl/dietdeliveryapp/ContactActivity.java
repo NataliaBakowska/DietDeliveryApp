@@ -11,10 +11,10 @@ import android.widget.EditText;
 
 public class ContactActivity extends AppCompatActivity implements View.OnClickListener{
 
-    EditText etTitle;
-    EditText etEmail;
-    EditText etMessage;
-    Button bSubmit;
+    protected EditText etTitle;
+    protected EditText etEmail;
+    protected EditText etMessage;
+    protected Button bSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
