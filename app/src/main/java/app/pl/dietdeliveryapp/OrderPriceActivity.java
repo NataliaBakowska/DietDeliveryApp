@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class OrderPriceActivity extends AppCompatActivity implements View.OnClickListener {
 
     protected TextView tvResult;
+    protected Button bConfirmOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,9 @@ public class OrderPriceActivity extends AppCompatActivity implements View.OnClic
         tvResult = findViewById(R.id.tvResult);
         String valueKcal = intent.getSerializableExtra("finalMessage").toString();
         tvResult.setText(valueKcal);
+
+        bConfirmOrder = findViewById(R.id.bConfirmOrder);
+        bConfirmOrder.setOnClickListener(this);
 
     }
 

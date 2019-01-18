@@ -21,7 +21,7 @@ public class WebActivity extends AppCompatActivity implements View.OnClickListen
         browser.getSettings().setLoadsImagesAutomatically(true);
         browser.getSettings().setJavaScriptEnabled(true);
         browser.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        browser.loadUrl("https://onet.pl");
+        browser.loadUrl("https://www.poradnikzdrowie.pl/diety-i-zywienie/odchudzanie/diety-odchudzajace/");
     }
 
     @Override
