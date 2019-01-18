@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected Button bWeb;
     protected Button bContact;
     protected Button bCall;
+    protected Button bOffer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         bWeb = findViewById(R.id.bWeb);
         bWeb.setOnClickListener(this);
+
+        bOffer = findViewById(R.id.bOffer);
+        bOffer.setOnClickListener(this);
 
         bContact = findViewById(R.id.bContact);
         bContact.setOnClickListener(this);
