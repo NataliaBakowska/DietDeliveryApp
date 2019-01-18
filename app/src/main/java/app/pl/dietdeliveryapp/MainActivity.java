@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bWeb.setOnClickListener(this);
 
         bContact = findViewById(R.id.bContact);
+        bContact.setOnClickListener(this);
 
         bCall = findViewById(R.id.bCall);
         bCall.setOnClickListener(this);
