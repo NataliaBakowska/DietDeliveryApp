@@ -67,6 +67,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent4);
                 break;
 
+            case R.id.bOffer:
+                Intent intent5 = new Intent(this , MenuActivity.class );
+                startActivity(intent5);
+                break;
+
             case R.id.bCall:
                 onCall();
                 break;

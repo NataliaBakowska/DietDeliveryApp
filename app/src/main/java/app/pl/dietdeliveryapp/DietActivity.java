@@ -18,13 +18,14 @@ public class DietActivity extends AppCompatActivity implements View.OnClickListe
     protected CheckBox cbVege;
     protected Button bSubmitOrder;
     protected TextView etOthers;
+    protected Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diet);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         tvKcal = findViewById(R.id.tvKcal);
         String valueKcal = "Sugerowana kaloryczność to ".concat(intent
                 .getSerializableExtra("kcal").toString());
@@ -46,7 +47,7 @@ public class DietActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        String finalKcal  = (String) sKcal.getSelectedItem();
+        String finalKcal  = (String)(sKcal.getSelectedItem().equals("") ? intent.getSerializableExtra("kcal").toString() : sKcal.getSelectedItem());
         String otherMessage = etOthers.getText().toString();
         boolean ifGlutenFree = cbGluten.isChecked();
         boolean ifLactoseFree = cbLactose.isChecked();
@@ -56,7 +57,7 @@ public class DietActivity extends AppCompatActivity implements View.OnClickListe
         switch ( id ) {
             case R.id.bSubmitOrder:
                 String confirmationMessage = formOrder(finalKcal, otherMessage, ifGlutenFree, ifLactoseFree, ifVege);
-                Intent intent = new Intent(this, PriceActivity.class);
+                Intent intent = new Intent(this, OrderPriceActivity.class);
                 intent.putExtra("finalMessage", confirmationMessage);
                 System.out.println(confirmationMessage);
                 startActivity(intent);
