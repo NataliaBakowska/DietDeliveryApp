@@ -110,5 +110,30 @@
     </string>
 
     <string name="action_settings">Settings</string>
+    <string name="title_activity_photo">PhotoActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="city">Darmowy dowóz możliwy m.in:
+        Mińsk Mazowiecki
+        Sulejówek
+        Halinów
+        Mińsk Mazowiecki
+        Dębe Wielkie
+        Mrozy
+        Siennica
+        Stanisławów
+        Cegłów
+        Dobre
+        Kałuszyn
+        Jakubów
+        Piastów
+        Pruszków
+        Brwinów
+        Michałowice
+        Nadarzyn
+        Raszyn
+        Piastów
+        Pruszków
+        Brwinów
+    </string>
 
 </resources>

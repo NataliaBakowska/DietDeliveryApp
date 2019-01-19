@@ -44,19 +44,23 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        Integer age = Integer.parseInt(etAge.getText().toString());
-        Double height = Double.parseDouble(etHeight.getText().toString());
-        Double weight = Double.parseDouble(etWeight.getText().toString());
-        String gender = spinner.getSelectedItem().toString();
-        boolean ifWeightLoss = cbLoss.isChecked();
+        try {
+            Integer age = Integer.parseInt(etAge.getText().toString());
+            Double height = Double.parseDouble(etHeight.getText().toString());
+            Double weight = Double.parseDouble(etWeight.getText().toString());
+            String gender = spinner.getSelectedItem().toString();
+            boolean ifWeightLoss = cbLoss.isChecked();
 
-        int id = v.getId();
-        switch ( id ) {
-            case R.id.bSubmit:
-                int dietKcal = calculateDiet(age, height, weight, gender, ifWeightLoss);
-                Intent intent1 = new Intent(this , DietActivity.class );
-                intent1.putExtra("kcal", dietKcal);
-                startActivity(intent1);
+            int id = v.getId();
+            switch (id) {
+                case R.id.bSubmit:
+                    int dietKcal = calculateDiet(age, height, weight, gender, ifWeightLoss);
+                    Intent intent1 = new Intent(this, DietActivity.class);
+                    intent1.putExtra("kcal", dietKcal);
+                    startActivity(intent1);
+            }
+        } catch (Exception e) {
+            e.getCause();
         }
     }
 

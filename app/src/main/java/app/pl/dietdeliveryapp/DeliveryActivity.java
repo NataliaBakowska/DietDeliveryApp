@@ -69,7 +69,7 @@ public class DeliveryActivity extends FragmentActivity implements OnMapReadyCall
         mMap.setOnPolygonClickListener(new GoogleMap.OnPolygonClickListener() {
             @Override
             public void onPolygonClick(Polygon polygon) {
-                Intent intent  = new Intent(getApplicationContext(), MyDeliveryActivity.class);
+                Intent intent  = new Intent(getApplicationContext(), DeliveryDetailsActivity.class);
                 startActivity(intent);
             }
         });
